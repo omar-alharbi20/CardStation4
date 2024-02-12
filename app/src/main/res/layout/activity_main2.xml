@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_1"
+    tools:context=".MainActivity2">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/Fragment"
+        android:name="com.example.cardstation.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="785dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/botton_navigation" />
+
+</RelativeLayout>
