@@ -9,13 +9,12 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="42dp"
         android:layout_marginBottom="519dp"
-        android:src="@drawable/img_12"
+        android:background="#0AFFFFFF"
+        android:src="@drawable/img_14"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/btn1"
