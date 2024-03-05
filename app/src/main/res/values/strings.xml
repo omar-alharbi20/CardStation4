@@ -4,11 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="mnueadd">
         <item>applle10</item>
-    <item>xpox</item>
-    <item>google</item>
+        <item>xpox</item>
+        <item>google</item>
     </string-array>
-
-
 
 
 </resources>
