@@ -9,34 +9,41 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.FirebaseApp
 
-class Signup : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var emailTextView: EditText
     private lateinit var passwordTextView: EditText
-    private lateinit var btnRegister: Button
+    private lateinit var btnLogin: Button
     private lateinit var progressbar: ProgressBar
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var btnSignUp: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        setContentView(R.layout.activity_main)
 
         FirebaseApp.initializeApp(applicationContext)
         mAuth = FirebaseAuth.getInstance()
 
         emailTextView = findViewById(R.id.email)
-        passwordTextView = findViewById(R.id.passwd)
-        btnRegister = findViewById(R.id.btnregister)
-        progressbar = findViewById(R.id.progressbar)
+        passwordTextView = findViewById(R.id.password)
+        btnLogin = findViewById(R.id.login)
+        progressbar = findViewById(R.id.progressBar)
+        btnSignUp = findViewById(R.id.signup) // تعديل الهوية إلى "signup"
 
-        btnRegister.setOnClickListener {
-            registerNewUser()
+        btnLogin.setOnClickListener {
+            loginUserAccount()
+        }
+
+        btnSignUp.setOnClickListener {
+            val intent = Intent(this@LoginActivity, Signup::class.java)
+            startActivity(intent)
         }
     }
 
-    private fun registerNewUser() {
+    private fun loginUserAccount() {
         progressbar.visibility = View.VISIBLE
 
         val email = emailTextView.text.toString()
@@ -51,19 +58,16 @@ class Signup : AppCompatActivity() {
             return
         }
 
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Registration successful!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, "Login successful!!", Toast.LENGTH_LONG).show()
                     progressbar.visibility = View.GONE
 
-                    val intent = Intent(this@Signup, LoginActivity::class.java)
+                    val intent = Intent(this@LoginActivity, MainActivity2::class.java)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(
-                        applicationContext, "Registration failed!! Please try again later",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    Toast.makeText(applicationContext, "Login failed!! Please try again later", Toast.LENGTH_LONG).show()
                     progressbar.visibility = View.GONE
                 }
             }
