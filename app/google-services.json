@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1076606400063",
+    "project_id": "cardstation-6112e",
+    "storage_bucket": "cardstation-6112e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076606400063:android:969e57f18ac21947736a8a",
+        "android_client_info": {
+          "package_name": "com.example.cardstation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8nexcJhjB81Sf66inuSaaGjr3jC84guE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
